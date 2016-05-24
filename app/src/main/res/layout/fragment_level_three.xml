@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+
+    <FrameLayout
+        android:id="@+id/frame_for_letters"
+        android:layout_centerInParent="true"
+        android:background="@drawable/farmers_board"
+        android:layout_width="100dp"
+        android:layout_height="200dp" >
+
+
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/image_one_state"
+        android:layout_toRightOf="@id/frame_for_letters"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:paddingLeft="10dp"
+        android:layout_centerInParent="true"
+        android:paddingRight="10dp"
+        android:scaleType="fitEnd"
+        android:background="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/farmer"
+        android:src="@drawable/farmer"
+        android:layout_width="120dp"
+        android:layout_toLeftOf="@id/frame_for_letters"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/next_word"
+        android:text="Next word"
+        android:layout_width="60dp"
+        android:alpha="0.7"
+        android:visibility="invisible"
+        android:background="@drawable/button"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

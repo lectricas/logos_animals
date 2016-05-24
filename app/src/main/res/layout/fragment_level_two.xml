@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/layout_one"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:visibility="invisible">
+            <ImageView
+                android:id="@+id/image_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_donkey"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"/>
+
+            <ImageView
+                android:id="@+id/image_one_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:scaleType="fitEnd"
+                android:background="@android:color/transparent" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/var1"
+                android:background="@drawable/button"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="PIG" />
+
+            <Button
+                android:id="@+id/var2"
+                android:layout_width="wrap_content"
+                android:background="@drawable/button"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="PIG" />
+
+            <Button
+                android:id="@+id/var3"
+                android:layout_width="wrap_content"
+                android:background="@drawable/button"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="PIG" />
+
+            <Button
+                android:id="@+id/var4"
+                android:layout_width="wrap_content"
+                android:background="@drawable/button"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="PIG" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next_word"
+        android:text="Next word"
+        android:layout_width="60dp"
+        android:alpha="0.7"
+        android:visibility="invisible"
+        android:background="@drawable/button"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_height="match_parent" />
+</RelativeLayout>
