@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.pythonanywhere.polusov.logosanimals.LogosApplication;
@@ -23,7 +22,6 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
@@ -43,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
     Map<Integer, BaseLevelFragment> fragments;
     @Bind(R.id.fragment_container)
     FrameLayout fragmentContainer;
-    @Bind(R.id.old_pics)
-    Button oldPics;
-    @Bind(R.id.new_pics)
-    Button newPics;
+//    @Bind(R.id.old_pics)
+//    Button oldPics;
+//    @Bind(R.id.new_pics)
+//    Button newPics;
 
 
     @Override
@@ -72,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         fragments.put(1, LevelOneFragment.newInstance());
         fragments.put(2, LevelTwoFragment.newInstance());
         fragments.put(3, LevelThreeFragment.newInstance());
+
+        setListsOld();
+        BaseLevelFragment fragment = fragments.get(prefs.getLevel());
+        fragment.setAnimalId(prefs.getAnimalNumber());
+        openFragment(fragment);
     }
 
 
@@ -79,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (wordsList.size() != 0){
-            oldPics.setVisibility(View.INVISIBLE);
-            newPics.setVisibility(View.INVISIBLE);
+//            oldPics.setVisibility(View.INVISIBLE);
+//            newPics.setVisibility(View.INVISIBLE);
             BaseLevelFragment fragment = fragments.get(prefs.getLevel());
             fragment.setAnimalId(prefs.getAnimalNumber());
             openFragment(fragment);
@@ -224,25 +227,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.old_pics, R.id.new_pics})
-    public void onClick(View view) {
-
-        oldPics.setVisibility(View.INVISIBLE);
-        newPics.setVisibility(View.INVISIBLE);
-
-        switch (view.getId()) {
-            case R.id.old_pics:
-                setListsOld();
-                break;
-            case R.id.new_pics:
-                setListsNew();
-                break;
-        }
-
-        BaseLevelFragment fragment = fragments.get(prefs.getLevel());
-        fragment.setAnimalId(prefs.getAnimalNumber());
-        openFragment(fragment);
-    }
+//    @OnClick({R.id.old_pics, R.id.new_pics})
+//    public void onClick(View view) {
+//
+//        oldPics.setVisibility(View.INVISIBLE);
+//        newPics.setVisibility(View.INVISIBLE);
+//
+//        switch (view.getId()) {
+//            case R.id.old_pics:
+//                setListsOld();
+//                break;
+//            case R.id.new_pics:
+//                setListsNew();
+//                break;
+//        }
+//
+//        BaseLevelFragment fragment = fragments.get(prefs.getLevel());
+//        fragment.setAnimalId(prefs.getAnimalNumber());
+//        openFragment(fragment);
+//    }
 }
 
 
